@@ -2,6 +2,7 @@
 Configuration edit s*.class
 
 /target/
+/logs/
 WebContent/
 
 
