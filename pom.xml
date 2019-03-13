@@ -121,16 +121,6 @@
                     <groups>integration</groups>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>tomcat7</server>
-                    <path>/demo</path>
-                </configuration>
-            </plugin>
 
         </plugins>
 
@@ -155,5 +145,41 @@
                 <spring.profiles.active>prod</spring.profiles.active>
             </properties>
         </profile>
+        <profile>
+            <id>testProfileForDeploying</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>2.2</version>
+                        <configuration>
+                            <url>http://localhost:8080/manager/text</url>
+                            <username>admin</username>
+                            <password>admin</password>
+                            <path>/demo</path>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>prodProfileForDeploying</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>2.2</version>
+                        <configuration>
+                            <url>http://localhost:8181/manager/text</url>
+                            <server>tomcatProdCred</server>
+                            <path>/demo</path>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
+
 </project>
