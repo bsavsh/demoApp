@@ -7,20 +7,27 @@ pipeline {
     stages {
         stage('Compile stage') {
             steps {
-                bat "mvn clean compile"
+                bat "mvn clean compile test-compile"
             }
         }
 
-         stage('testing stage') {
+         stage('unit testing stage') {
              steps {
                 bat "mvn test"
              }
          }
 
-          stage('deployment stage') {
-              steps {
-                bat "mvn tomcat7:redeploy -P prodProfileForDeploying"
-              }
-          }
+         stage('integration testing stage') {
+            steps {
+                bat "mvn failsafe:integration-test -P test"
+            }
+         }
+
+         stage('deployment to test server') {
+             steps {
+               bat "mvn clean package -P test"
+               bat "mvn tomcat7:redeploy -P tesProfileForDeploying"
+             }
+         }
     }
 }
