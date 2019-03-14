@@ -30,7 +30,7 @@ pipeline {
              }
          }
 
-         stage('deployment to test server') {
+         stage('deployment to prod server') {
             steps {
                 bat "mvn clean package -P prod"
                 bat "mvn tomcat7:redeploy -P prodProfileForDeploying"
