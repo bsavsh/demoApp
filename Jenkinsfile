@@ -28,14 +28,14 @@ pipeline {
          stage('deployment to test server') {
              steps {
                bat "mvn clean package -P test"
-               bat "mvn tomcat7:redeploy -P testProfileForDeploying"
+               bat "mvn tomcat7:redeploy-only -P testProfileForDeploying"
              }
          }
 
          stage('deployment to prod server') {
             steps {
                 bat "mvn clean package -P prod"
-                bat "mvn tomcat7:redeploy -P prodProfileForDeploying"
+                bat "mvn tomcat7:redeploy-only -P prodProfileForDeploying"
             }
          }
     }
