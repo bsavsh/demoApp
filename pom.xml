@@ -164,7 +164,6 @@
                             <username>admin</username>
                             <password>admin</password>
                             <path>/demo</path>
-                            <warFile>/target/demo.war</warFile>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -182,7 +181,6 @@
                             <url>http://localhost:8181/manager/text</url>
                             <server>tomcatProdCred</server>
                             <path>/demo</path>
-                            <warFile>/target/demo.war</warFile>
                         </configuration>
                     </plugin>
                 </plugins>
