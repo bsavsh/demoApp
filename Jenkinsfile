@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('Compile stage') {
             steps {
-                bat "mvn clean compile test-compile"
+                bat "mvn clean"
+                bat "mvn compile -P test"
+                bat "mvn test-compile -P test"
             }
         }
 
@@ -19,7 +21,7 @@ pipeline {
 
          stage('integration testing stage') {
             steps {
-                bat "mvn failsafe:integration-test -P test"
+                bat "mvn failsafe:integration-test"
             }
          }
 
