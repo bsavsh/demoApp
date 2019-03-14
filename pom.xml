@@ -153,9 +153,6 @@
         </profile>
         <profile>
             <id>testProfileForDeploying</id>
-            <properties>
-                <myActiveProfile>test</myActiveProfile>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -167,6 +164,7 @@
                             <username>admin</username>
                             <password>admin</password>
                             <path>/demo</path>
+                            <warFile>/target/demo.war</warFile>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -174,9 +172,6 @@
         </profile>
         <profile>
             <id>prodProfileForDeploying</id>
-            <properties>
-                <myActiveProfile>prod</myActiveProfile>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -187,6 +182,7 @@
                             <url>http://localhost:8181/manager/text</url>
                             <server>tomcatProdCred</server>
                             <path>/demo</path>
+                            <warFile>/target/demo.war</warFile>
                         </configuration>
                     </plugin>
                 </plugins>
