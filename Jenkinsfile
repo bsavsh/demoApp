@@ -26,7 +26,7 @@ pipeline {
          stage('deployment to test server') {
              steps {
                bat "mvn clean package -P test"
-               bat "mvn tomcat7:redeploy -P tesProfileForDeploying"
+               bat "mvn tomcat7:redeploy -P testProfileForDeploying"
              }
          }
     }
