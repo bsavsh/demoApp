@@ -80,6 +80,12 @@
 
     <build>
         <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -130,19 +136,19 @@
         <profile>
             <id>test</id>
             <properties>
-                <spring.profiles.active>test</spring.profiles.active>
+                <myActiveProfile>test</myActiveProfile>
             </properties>
         </profile>
         <profile>
             <id>dev</id>
             <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
+                <myActiveProfile>dev</myActiveProfile>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
+                <myActiveProfile>prod</myActiveProfile>
             </properties>
         </profile>
         <profile>
