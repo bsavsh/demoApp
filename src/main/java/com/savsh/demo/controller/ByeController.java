@@ -11,4 +11,9 @@ public class ByeController {
         return "bey";
     }
 
+    @GetMapping("/bye-bey")
+    public String getByeBye() {
+        return "bye bye";
+    }
+
 }
