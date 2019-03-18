@@ -13,7 +13,7 @@ WebContent/
 *.war
 *.ear
 .classpath
-.project
+.board
 .cfs
 .settings/
 *.iml

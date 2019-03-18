@@ -1,9 +1,8 @@
 package com.savsh.demo.dao;
 
-import java.io.Serializable;
 import java.util.List;
 
-public interface IGenericDao<T extends Serializable> {
+public interface IGenericDao<T> {
 
     T findOne(final int id);
 
