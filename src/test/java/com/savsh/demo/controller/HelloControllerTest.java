@@ -9,6 +9,6 @@ class HelloControllerTest {
 
     @Test
     void getUserById() {
-        Assertions.assertEquals(1,1);
+        Assertions.assertEquals("dummy","dummy");
     }
 }
