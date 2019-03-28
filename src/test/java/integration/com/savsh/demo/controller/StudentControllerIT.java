@@ -24,7 +24,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @ContextConfiguration(classes = Application.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Tag("integration")
-class StudentControllerTest {
+class StudentControllerIT {
 
     @LocalServerPort
     private int port;

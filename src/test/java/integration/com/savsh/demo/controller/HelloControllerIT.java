@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(classes = Application.class)
 @WebMvcTest(HelloController.class)
 @Tag("integration")
-class HelloControllerTest {
+class HelloControllerIT {
 
     @Autowired
     private MockMvc mvc;
